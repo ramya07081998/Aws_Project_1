@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - apt-get update -y
+      - apt-get install -y maven
+  build:
+    commands:
+      - echo Building the application...
+      - mvn clean install
+artifacts:
+  files:
+    - target/*.jar
+  discard-paths: yes
+  base-directory: target
